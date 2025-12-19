@@ -1,25 +1,16 @@
-"""
-HedgeIQ Backend API
-FastAPI server for BTC options Greeks analytics
-"""
-
+"""HedgeIQ Backend API - Production Ready"""
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from contextlib import asynccontextmanager
 import uvicorn
-
 from routers import greeks, levels
-from cache.redis_client import init_cache, close_cache
+# Removed Redis for initial deployment simplicity
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     """Startup and shutdown events"""
-    # Startup
-    await init_cache()
     print("🚀 HedgeIQ API starting...")
     yield
-    # Shutdown
-    await close_cache()
     print("👋 HedgeIQ API shutting down...")
 
 app = FastAPI(
@@ -29,10 +20,10 @@ app = FastAPI(
     lifespan=lifespan
 )
 
-# CORS - Allow all origins for local development
+# CORS - Allow all origins to ensure your Netlify frontend can connect
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Allow all origins (local HTML files work now)
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
