@@ -5,6 +5,7 @@ import pandas as pd
 import numpy as np
 from services.deribit_data import DeribitDataFetcher
 from services.trading_signals import RawGreeksAnalysis
+from services.calculate_max_pain import MaxPainCalculator  # ADD THIS LINE
 
 def fetch_and_calculate_all_data(days_out=30):
     """
@@ -17,6 +18,7 @@ def fetch_and_calculate_all_data(days_out=30):
     # Step 1: Initialize your existing classes
     fetcher = DeribitDataFetcher()
     analyzer = RawGreeksAnalysis()
+    max_pain_calc = MaxPainCalculator()  # ADD THIS LINE
     
     # Step 2: Get BTC price (your existing code)
     btc_price = fetcher.get_btc_price()
@@ -32,6 +34,9 @@ def fetch_and_calculate_all_data(days_out=30):
     
     if greeks_df.empty:
         raise Exception("Greeks calculation returned empty DataFrame")
+    
+    # Step 4.5: Calculate max pain - ADD THIS BLOCK
+    _, max_pain_strike = max_pain_calc.calculate_max_pain(days_out=days_out)
     
     # Step 5: Extract top 10 signals for the dashboard
     greeks_df['Abs_GEX'] = greeks_df.get('GEX', 0).abs()
@@ -68,11 +73,12 @@ def fetch_and_calculate_all_data(days_out=30):
             "gex_score": float(gex_score)
         })
     
-    # Step 7: Calculate summary metrics
+    # Step 7: Calculate summary metrics - ADD max_pain HERE
     metrics = {
         "net_gex": float(greeks_df.get('GEX', 0).sum()),
         "net_vanna": float(greeks_df.get('Vanna', 0).sum()),
         "net_charm": float(greeks_df.get('Charm', 0).sum()),
+        "max_pain": float(max_pain_strike),  # ADD THIS LINE
         "total_oi": float(greeks_df.get('Open_Interest', 0).sum()),
         "total_volume": float(greeks_df.get('Volume', 0).sum())
     }
