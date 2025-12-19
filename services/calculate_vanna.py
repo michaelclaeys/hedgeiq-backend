@@ -6,7 +6,7 @@ Vanna = dDelta/dVol (how delta changes with IV)
 import numpy as np
 import pandas as pd
 from scipy.stats import norm
-from deribit_data import DeribitDataFetcher
+from services.deribit_data import DeribitDataFetcher
 import matplotlib.pyplot as plt
 
 class VannaCalculator:

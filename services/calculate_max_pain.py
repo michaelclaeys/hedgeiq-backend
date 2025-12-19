@@ -5,7 +5,7 @@ Max Pain = strike where option holders lose most money
 
 import numpy as np
 import pandas as pd
-from deribit_data import DeribitDataFetcher
+from services.deribit_data import DeribitDataFetcher
 
 class MaxPainCalculator:
     def __init__(self):

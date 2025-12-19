@@ -22,10 +22,10 @@ YOU decide the trade direction based on the Greeks mechanics.
 import numpy as np
 import pandas as pd
 from datetime import datetime
-from calculate_gex import GEXCalculator
-from calculate_vanna import VannaCalculator
-from calculate_charm import CharmCalculator
-from calculate_max_pain import MaxPainCalculator
+from services.calculate_gex import GEXCalculator
+from services.calculate_vanna import VannaCalculator
+from services.calculate_charm import CharmCalculator
+from services.calculate_max_pain import MaxPainCalculator
 
 class RawGreeksAnalysis:
     def __init__(self):

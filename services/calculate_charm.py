@@ -6,7 +6,7 @@ Charm = dDelta/dTime (how delta changes as time passes)
 import numpy as np
 import pandas as pd
 from scipy.stats import norm
-from deribit_data import DeribitDataFetcher
+from services.deribit_data import DeribitDataFetcher
 import matplotlib.pyplot as plt
 from datetime import datetime
 
