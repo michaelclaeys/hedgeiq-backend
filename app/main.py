@@ -262,10 +262,3 @@ async def get_metrics(tier: UserTier = Depends(get_user_tier_from_token)):
         "last_updated": cache["last_updated"],
         "tier": tier.value if hasattr(tier, 'value') else str(tier)
     }
-```
-
----
-
-**Also, add `httpx` to your `requirements.txt`:**
-```
-httpx
