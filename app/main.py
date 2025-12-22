@@ -7,6 +7,7 @@ import httpx
 
 from app.cache import UserTier, get_cache, is_cache_empty, get_refresh_rate
 from app.scheduler import start_scheduler, stop_scheduler
+from app.stripe_routes import router as stripe_router  # ADD THIS LINE
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -37,6 +38,9 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# ADD THIS LINE - Include Stripe routes
+app.include_router(stripe_router, prefix="/api/stripe", tags=["stripe"])
 
 
 async def get_user_tier_from_token(authorization: Optional[str] = Header(None)) -> UserTier:
