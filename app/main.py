@@ -111,65 +111,83 @@ async def get_user_tier_from_token(authorization: Optional[str] = Header(None)) 
 def limit_data_for_tier(data: dict, tier: UserTier) -> dict:
     """
     Limit data based on user tier.
-    Free users get restricted data.
+    BETA MODE: All features unlocked for everyone.
     """
-    tier_value = tier.value if hasattr(tier, 'value') else str(tier)
-    
-    if tier_value == "free":
-        # Free tier: only top 3 signals, limited metrics
-        limited_signals = data.get("signals", [])[:3]
-        
-        # Remove detailed Greeks from signals for free users
-        for signal in limited_signals:
-            signal["vanna"] = 0
-            signal["charm"] = 0
-        
-        return {
-            "btc_price": data.get("btc_price"),
-            "signals": limited_signals,
-            "metrics": {
-                "net_gex": data.get("metrics", {}).get("net_gex", 0),
-                "max_pain": data.get("metrics", {}).get("max_pain", 0),
-                # Hide detailed metrics for free
-                "net_vanna": "Upgrade to view",
-                "net_charm": "Upgrade to view",
-                "total_oi": "Upgrade to view",
-                "total_volume": "Upgrade to view"
-            },
-            "tier_limited": True,
-            "upgrade_message": "Upgrade to Starter or Pro for full data access"
-        }
-    
-    elif tier_value == "starter":
-        # Starter tier: all signals, but no vanna/charm details
-        signals = data.get("signals", [])
-        
-        for signal in signals:
-            signal["vanna"] = 0
-            signal["charm"] = 0
-        
-        return {
-            "btc_price": data.get("btc_price"),
-            "signals": signals,
-            "metrics": {
-                "net_gex": data.get("metrics", {}).get("net_gex", 0),
-                "max_pain": data.get("metrics", {}).get("max_pain", 0),
-                "net_vanna": "Upgrade to Pro",
-                "net_charm": "Upgrade to Pro",
-                "total_oi": data.get("metrics", {}).get("total_oi", 0),
-                "total_volume": data.get("metrics", {}).get("total_volume", 0)
-            },
-            "tier_limited": True,
-            "upgrade_message": "Upgrade to Pro for Vanna & Charm analysis"
-        }
-    
-    # Pro tier: full data
+    # BETA: Return full data for all tiers
     return {
         "btc_price": data.get("btc_price"),
         "signals": data.get("signals", []),
         "metrics": data.get("metrics", {}),
         "tier_limited": False
     }
+
+
+# ============================================================
+# ORIGINAL TIER RESTRICTIONS - UNCOMMENT TO RE-ENABLE LATER
+# ============================================================
+# def limit_data_for_tier(data: dict, tier: UserTier) -> dict:
+#     """
+#     Limit data based on user tier.
+#     Free users get restricted data.
+#     """
+#     tier_value = tier.value if hasattr(tier, 'value') else str(tier)
+#     
+#     if tier_value == "free":
+#         # Free tier: only top 3 signals, limited metrics
+#         limited_signals = data.get("signals", [])[:3]
+#         
+#         # Remove detailed Greeks from signals for free users
+#         for signal in limited_signals:
+#             signal["vanna"] = 0
+#             signal["charm"] = 0
+#         
+#         return {
+#             "btc_price": data.get("btc_price"),
+#             "signals": limited_signals,
+#             "metrics": {
+#                 "net_gex": data.get("metrics", {}).get("net_gex", 0),
+#                 "max_pain": data.get("metrics", {}).get("max_pain", 0),
+#                 # Hide detailed metrics for free
+#                 "net_vanna": "Upgrade to view",
+#                 "net_charm": "Upgrade to view",
+#                 "total_oi": "Upgrade to view",
+#                 "total_volume": "Upgrade to view"
+#             },
+#             "tier_limited": True,
+#             "upgrade_message": "Upgrade to Starter or Pro for full data access"
+#         }
+#     
+#     elif tier_value == "starter":
+#         # Starter tier: all signals, but no vanna/charm details
+#         signals = data.get("signals", [])
+#         
+#         for signal in signals:
+#             signal["vanna"] = 0
+#             signal["charm"] = 0
+#         
+#         return {
+#             "btc_price": data.get("btc_price"),
+#             "signals": signals,
+#             "metrics": {
+#                 "net_gex": data.get("metrics", {}).get("net_gex", 0),
+#                 "max_pain": data.get("metrics", {}).get("max_pain", 0),
+#                 "net_vanna": "Upgrade to Pro",
+#                 "net_charm": "Upgrade to Pro",
+#                 "total_oi": data.get("metrics", {}).get("total_oi", 0),
+#                 "total_volume": data.get("metrics", {}).get("total_volume", 0)
+#             },
+#             "tier_limited": True,
+#             "upgrade_message": "Upgrade to Pro for Vanna & Charm analysis"
+#         }
+#     
+#     # Pro tier: full data
+#     return {
+#         "btc_price": data.get("btc_price"),
+#         "signals": data.get("signals", []),
+#         "metrics": data.get("metrics", {}),
+#         "tier_limited": False
+#     }
+# ============================================================
 
 
 @app.get("/")
@@ -235,9 +253,9 @@ async def get_signals(tier: UserTier = Depends(get_user_tier_from_token)):
     
     signals = cache["data"]["signals"]
     
-    # Limit signals for free tier
-    if tier_value == "free":
-        signals = signals[:3]
+    # BETA: Don't limit signals
+    # if tier_value == "free":
+    #     signals = signals[:3]
     
     return {
         "signals": signals,
