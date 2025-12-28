@@ -1,0 +1,25 @@
+
+# HedgeIQ 2.0 - Phase 1 Requirements
+# Stream Processing & Flow-Based GEX
+
+# Core
+fastapi>=0.109.0
+uvicorn>=0.27.0
+python-dotenv>=1.0.0
+
+# Async HTTP & WebSocket
+websockets>=12.0
+aiohttp>=3.9.0
+httpx>=0.26.0
+
+# Data processing
+pandas>=2.1.0
+numpy>=1.24.0
+scipy>=1.11.0
+
+# Redis (state management)
+redis>=5.0.0
+
+# Existing (keep from your current requirements)
+requests>=2.31.0
+apscheduler>=3.10.0
