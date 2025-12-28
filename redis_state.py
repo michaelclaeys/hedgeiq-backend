@@ -30,10 +30,6 @@ class RedisStateManager:
     def __init__(self, redis_url: Optional[str] = None, use_memory: bool = False):
         """
         Initialize Redis connection.
-        
-        Args:
-            redis_url: Redis connection URL (redis:// or rediss:// for SSL)
-            use_memory: If True, use in-memory dict instead of real Redis
         """
         self.use_memory = use_memory
         
@@ -54,15 +50,20 @@ class RedisStateManager:
             print(f"📦 Connecting to Redis: {display_url}")
             
             try:
-                # ssl_cert_reqs=None handles Render's SSL without local cert verification
-                self.redis = redis.from_url(
-                    redis_url,
-                    decode_responses=True,
-                    ssl_cert_reqs=None
-                )
+                # Build the connection arguments
+                conn_kwargs = {
+                    "decode_responses": True
+                }
+
+                # Only add SSL settings if using a secure URL (rediss://)
+                if redis_url.startswith("rediss://"):
+                    conn_kwargs["ssl_cert_reqs"] = None
+                
+                self.redis = redis.from_url(redis_url, **conn_kwargs)
                 self.redis.ping()
                 print("✓ Redis connected successfully!")
-            except redis.ConnectionError as e:
+                
+            except Exception as e:
                 print(f"⚠ Redis connection failed: {e}")
                 print("  Falling back to in-memory state")
                 self.use_memory = True
