@@ -1,0 +1,265 @@
+
+======================================================================
+KEY LEVELS ANALYSIS
+======================================================================
+
+SUPPORT: $85,000 [5K ROUND]
+   Distance: -3.5% | Current: $88,063
+
+   GEX: 54,586 | Dealer Score: 3.5/4
+      LONG gamma → Price falls = Dealers BUY (support) | Price rises = Dealers SELL (dampens)
+
+   Vanna: -288,504,504 | Dealer Score: 3.5/4
+      Negative Vanna → Rising IV = Dealers BUY spot (strengthens resistance) | Falling IV = Dealers SELL
+
+   Charm: -200,742,427 | Dealer Score: 3.5/4 | DTE: 7.0
+      Negative Charm → As expiry approaches = Delta increases = Dealers BUY spot (bullish pressure)
+
+   OI: 13,643 (Median: 2742) | Volume: 628
+   Vol/OI: 0.05x
+      → LOW - Stable support (established positions)
+
+   Greeks Aligned: 3/3 (GEX, Vanna, Charm)
+
+   ✅ STRONG SETUP - Consider full size (1.0%)
+
+----------------------------------------------------------------------
+
+SUPPORT: $88,000 [1K ROUND]
+   Distance: -0.1% | Current: $88,063
+
+   GEX: 32,241 | Dealer Score: 2.5/4
+      LONG gamma → Price falls = Dealers BUY (support) | Price rises = Dealers SELL (dampens)
+
+   Vanna: -4,292,265 | Dealer Score: 2.5/4
+      Negative Vanna → Rising IV = Dealers BUY spot (strengthens resistance) | Falling IV = Dealers SELL
+
+   Charm: -4,873,087 | Dealer Score: 2.5/4 | DTE: 7.0
+      Negative Charm → As expiry approaches = Delta increases = Dealers BUY spot (bullish pressure)
+
+   OI: 5,587 (Median: 2742) | Volume: 1,107
+   Vol/OI: 0.20x
+      → LOW - Stable support (established positions)
+
+   Greeks Aligned: 3/3 (GEX, Vanna, Charm)
+
+   ⚠️  MODERATE SETUP - Consider 75% size (0.75%)
+
+----------------------------------------------------------------------
+
+SUPPORT: $86,000 [1K ROUND]
+   Distance: -2.3% | Current: $88,063
+
+   GEX: 15,790 | Dealer Score: 1.5/4
+      LONG gamma → Price falls = Dealers BUY (support) | Price rises = Dealers SELL (dampens)
+
+   Vanna: -73,212,450 | Dealer Score: 1.5/4
+      Negative Vanna → Rising IV = Dealers BUY spot (strengthens resistance) | Falling IV = Dealers SELL
+
+   Charm: -83,100,123 | Dealer Score: 1.5/4 | DTE: 7.0
+      Negative Charm → As expiry approaches = Delta increases = Dealers BUY spot (bullish pressure)
+
+   OI: 5,127 (Median: 2742) | Volume: 392
+   Vol/OI: 0.08x
+      → LOW - Stable support (established positions)
+
+   Greeks Aligned: 3/3 (GEX, Vanna, Charm)
+
+   ❌ SKIP - Insufficient confluence or dealer score
+
+----------------------------------------------------------------------
+
+RESISTANCE: $90,000 [5K ROUND]
+   Distance: +2.2% | Current: $88,063
+
+   GEX: -8,115 | Dealer Score: 3.5/4
+      SHORT gamma → Price rises = Dealers BUY (amplifies) | Price falls = Dealers SELL (accelerates)
+
+   Vanna: -46,420,622 | Dealer Score: 3.5/4
+      Negative Vanna → Rising IV = Dealers BUY spot (strengthens resistance) | Falling IV = Dealers SELL
+
+   Charm: 118,311,037 | Dealer Score: 3.5/4 | DTE: 7.0
+      Positive Charm → As expiry approaches = Delta decreases = Dealers SELL spot (bearish pressure)
+
+   OI: 8,656 (Median: 2742) | Volume: 555
+   Vol/OI: 0.06x
+      → LOW - Stale resistance (old positions)
+
+   Greeks Aligned: 2/3 (GEX, Charm)
+
+   ⚠️  WEAK SETUP - Consider 50% size (0.5%) or SKIP
+
+----------------------------------------------------------------------
+
+RESISTANCE: $92,000 [1K ROUND]
+   Distance: +4.5% | Current: $88,063
+
+   GEX: -6,311 | Dealer Score: 1.5/4
+      SHORT gamma → Price rises = Dealers BUY (amplifies) | Price falls = Dealers SELL (accelerates)
+
+   Vanna: -53,759,895 | Dealer Score: 1.5/4
+      Negative Vanna → Rising IV = Dealers BUY spot (strengthens resistance) | Falling IV = Dealers SELL
+
+   Charm: 33,368,211 | Dealer Score: 1.5/4 | DTE: 7.0
+      Positive Charm → As expiry approaches = Delta decreases = Dealers SELL spot (bearish pressure)
+
+   OI: 4,554 (Median: 2742) | Volume: 170
+   Vol/OI: 0.04x
+      → LOW - Stale resistance (old positions)
+
+   Greeks Aligned: 2/3 (GEX, Charm)
+
+   ❌ SKIP - Insufficient confluence or dealer score
+
+----------------------------------------------------------------------
+
+SUPPORT: $84,000 [1K ROUND]
+   Distance: -4.6% | Current: $88,063
+
+   GEX: 6,067 | Dealer Score: 1.5/4
+      LONG gamma → Price falls = Dealers BUY (support) | Price rises = Dealers SELL (dampens)
+
+   Vanna: -58,856,940 | Dealer Score: 1.5/4
+      Negative Vanna → Rising IV = Dealers BUY spot (strengthens resistance) | Falling IV = Dealers SELL
+
+   Charm: -31,356,474 | Dealer Score: 1.5/4 | DTE: 7.0
+      Negative Charm → As expiry approaches = Delta increases = Dealers BUY spot (bullish pressure)
+
+   OI: 4,743 (Median: 2742) | Volume: 416
+   Vol/OI: 0.09x
+      → LOW - Stable support (established positions)
+
+   Greeks Aligned: 3/3 (GEX, Vanna, Charm)
+
+   ❌ SKIP - Insufficient confluence or dealer score
+
+----------------------------------------------------------------------
+
+SUPPORT: $80,000 [5K ROUND]
+   Distance: -9.2% | Current: $88,063
+
+   GEX: 6,035 | Dealer Score: 3.5/4
+      LONG gamma → Price falls = Dealers BUY (support) | Price rises = Dealers SELL (dampens)
+
+   Vanna: -67,831,602 | Dealer Score: 3.5/4
+      Negative Vanna → Rising IV = Dealers BUY spot (strengthens resistance) | Falling IV = Dealers SELL
+
+   Charm: -40,916,284 | Dealer Score: 3.5/4 | DTE: 7.0
+      Negative Charm → As expiry approaches = Delta increases = Dealers BUY spot (bullish pressure)
+
+   OI: 8,814 (Median: 2742) | Volume: 419
+   Vol/OI: 0.05x
+      → LOW - Stable support (established positions)
+
+   Greeks Aligned: 3/3 (GEX, Vanna, Charm)
+
+   ✅ STRONG SETUP - Consider full size (1.0%)
+
+----------------------------------------------------------------------
+
+RESISTANCE: $94,000 [1K ROUND]
+   Distance: +6.7% | Current: $88,063
+
+   GEX: -5,099 | Dealer Score: 1.5/4
+      SHORT gamma → Price rises = Dealers BUY (amplifies) | Price falls = Dealers SELL (accelerates)
+
+   Vanna: -66,773,030 | Dealer Score: 1.5/4
+      Negative Vanna → Rising IV = Dealers BUY spot (strengthens resistance) | Falling IV = Dealers SELL
+
+   Charm: 16,275,482 | Dealer Score: 1.5/4 | DTE: 7.0
+      Positive Charm → As expiry approaches = Delta decreases = Dealers SELL spot (bearish pressure)
+
+   OI: 4,051 (Median: 2742) | Volume: 210
+   Vol/OI: 0.05x
+      → LOW - Stale resistance (old positions)
+
+   Greeks Aligned: 2/3 (GEX, Charm)
+
+   ❌ SKIP - Insufficient confluence or dealer score
+
+----------------------------------------------------------------------
+
+SUPPORT: $82,000 [1K ROUND]
+   Distance: -6.9% | Current: $88,063
+
+   GEX: 4,181 | Dealer Score: 1.5/4
+      LONG gamma → Price falls = Dealers BUY (support) | Price rises = Dealers SELL (dampens)
+
+   Vanna: -43,720,515 | Dealer Score: 1.5/4
+      Negative Vanna → Rising IV = Dealers BUY spot (strengthens resistance) | Falling IV = Dealers SELL
+
+   Charm: -15,819,188 | Dealer Score: 1.5/4 | DTE: 7.0
+      Negative Charm → As expiry approaches = Delta increases = Dealers BUY spot (bullish pressure)
+
+   OI: 3,102 (Median: 2742) | Volume: 216
+   Vol/OI: 0.07x
+      → LOW - Stable support (established positions)
+
+   Greeks Aligned: 3/3 (GEX, Vanna, Charm)
+
+   ❌ SKIP - Insufficient confluence or dealer score
+
+----------------------------------------------------------------------
+
+RESISTANCE: $95,000 [5K ROUND]
+   Distance: +7.9% | Current: $88,063
+
+   GEX: -3,234 | Dealer Score: 3.5/4
+      SHORT gamma → Price rises = Dealers BUY (amplifies) | Price falls = Dealers SELL (accelerates)
+
+   Vanna: -54,605,067 | Dealer Score: 3.5/4
+      Negative Vanna → Rising IV = Dealers BUY spot (strengthens resistance) | Falling IV = Dealers SELL
+
+   Charm: 17,489,106 | Dealer Score: 3.5/4 | DTE: 7.0
+      Positive Charm → As expiry approaches = Delta decreases = Dealers SELL spot (bearish pressure)
+
+   OI: 7,276 (Median: 2742) | Volume: 335
+   Vol/OI: 0.05x
+      → LOW - Stale resistance (old positions)
+
+   Greeks Aligned: 2/3 (GEX, Charm)
+
+   ⚠️  WEAK SETUP - Consider 50% size (0.5%) or SKIP
+
+----------------------------------------------------------------------
+
+======================================================================
+MAX PAIN ANALYSIS
+======================================================================
+Max Pain: $94,000 | Current: $88,063
+Distance: +6.7%
+UPWARD PULL toward Max Pain
+
+======================================================================
+TRADING RULES (UPDATED)
+======================================================================
+
+Dealer Score Thresholds (0-4 scale):
+  3.5-4.0 = Strong structural level → Full size (1.0%)
+  2.5-3.5 = Moderate level → 75% size (0.75%)
+  2.0-2.5 = Weak level → 50% size (0.5%) or SKIP
+  <2.0 = No structural support → SKIP
+
+Greek Confluence Requirements:
+  - Minimum 3/3 Greeks aligned for strong conviction
+  - 2/3 Greeks = proceed with caution (smaller size)
+  - Pay attention to WHICH Greeks conflict and why
+
+Vol/OI Discretionary Interpretation:
+  - Support (positive GEX): Prefer LOW vol/OI (stable)
+  - Resistance (negative GEX): Prefer HIGH vol/OI (fresh) or SKIP
+  - Use as confirmation, not hard requirement
+
+Price Action Confirmation:
+  - Wait for VWAP test or level touch
+  - Look for rejection candles
+  - Don't front-run the level
+
+Stop Loss Management:
+  - Support levels: -0.5% to -0.6% (accounts for shakeouts)
+  - If breaks >0.6%, that's real breakdown → exit
+  - Track in journal: how far did it wick vs actual breakdown
+
+======================================================================
+COMPLETE
+======================================================================
