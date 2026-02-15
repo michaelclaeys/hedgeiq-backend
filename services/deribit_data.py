@@ -154,12 +154,12 @@ class DeribitDataFetcher:
         # DEBUG: Volume stats
         total_volume = df['volume'].sum()
         non_zero_volume = (df['volume'] > 0).sum()
-        print(f"\n📊 Volume Statistics:")
+        print(f"\nVolume Statistics:")
         print(f"   Total 24h Volume: {total_volume:,.0f} contracts")
         print(f"   Strikes with volume: {non_zero_volume}/{len(df)}")
-        
+
         if total_volume == 0:
-            print("⚠️  WARNING: All volumes are 0 - might be off-hours or API issue")
+            print("WARNING: All volumes are 0 - might be off-hours or API issue")
         
         return df
 
